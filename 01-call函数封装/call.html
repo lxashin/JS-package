@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>call</title>
+  <script src="./call.js"></script>
+</head>
+
+<body>
+  <script>
+    function add (a, b) {
+      console.log(this)
+      return a + b + this.c
+    }
+    let obj = {
+      c: 10
+    }
+    window.c = 100
+    let res = call(add, null, 30, 40)
+    console.log(res)
+  </script>
+</body>
+
+</html>

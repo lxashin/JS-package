@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>apply</title>
+  <script src="../01-call函数封装//call.js"></script>
+  <script src="./bind.js"></script>
+</head>
+
+<body>
+  <script>
+    function add (a, b) {
+      return a + b + this.c
+    }
+    let obj = {
+      c: 10
+    }
+    let c = 100
+    let fn = bind(add, obj, 30, 50)
+    console.log(fn())
+    let fn2 = bind(add, obj)
+    console.log(fn2(140, 60))
+  </script>
+</body>
+
+</html>

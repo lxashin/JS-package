@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>防抖debounce</title>
+  <script src="./debounce.js"></script>
+  <script src="../01-call函数封装//call.js"></script>
+</head>
+
+<body>
+  <input type="text">
+  <script>
+    let inp = document.querySelector('input')
+    inp.onkeydown = debounce((e) => {
+      console.log(e.key)
+    }, 2000)
+  </script>
+</body>
+
+</html>
