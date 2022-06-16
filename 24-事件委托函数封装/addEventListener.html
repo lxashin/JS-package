@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>事件委托</title>
+  <script src="./addEventListener.js"></script>
+</head>
+
+<body>
+  <ui id="ul">
+    <li>aaa</li>
+    <li>bbb</li>
+    <li>ccc</li>
+    <div>ddd</div>
+  </ui>
+  <script>
+    addEventListener('#ul', 'click', function (e) {
+      // 点击输出文本标签
+      console.log(this.innerHTML)
+    }, 'li')
+  </script>
+</body>
+
+</html>

@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>EventBus事件总线</title>
+  <script src="./eventBus.js"></script>
+</head>
+
+<body>
+  <script>
+    eventBus.on('login', data => {
+      console.log(data + '登录成功')
+    })
+    eventBus.on('login', data => {
+      console.log(data + '已完成登录进入页面')
+    })
+    eventBus.on('logout', data => {
+      console.log(data + '退出登录')
+    })
+
+    setTimeout(() => {
+      eventBus.emit('login', 'ashin')
+      eventBus.emit('logout', 'ashin')
+    }, 2000)
+
+    eventBus.off()
+  </script>
+</body>
+
+</html>
