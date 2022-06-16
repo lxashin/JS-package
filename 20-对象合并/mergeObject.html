@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>merge对象合并</title>
+  <script src="./mergeObject.js"></script>
+</head>
+
+<body>
+  <script>
+    let obj1 = { a: [{ x: 2 }, { y: 3 }], b: [{ z: 12 }], c: [1, 2, 3], d: '12' }
+    let obj2 = { a: [{ z: 4 }], b: [{ z: 12 }], c: 4, d: '12' }
+    console.log(mergeObject(obj1, obj2))
+
+  </script>
+</body>
+
+</html>
