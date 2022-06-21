@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>消息发布订阅</title>
+  <script src="./pubsub.js"></script>
+</head>
+
+<body>
+  <script>
+    let pid1 = Pubsub.subscribe('pay', data => {
+      console.log('商家收到订单', data)
+    })
+    let pid2 = Pubsub.subscribe('pay', data => {
+      console.log('骑手收到订单', data)
+    })
+
+    Pubsub.publish('pay', {
+      title: '香菇炒肉',
+      price: 20,
+      address: '广师大'
+    })
+    Pubsub.unSubscribe(pid1)
+    console.log(Pubsub)
+  </script>
+</body>
+
+</html>

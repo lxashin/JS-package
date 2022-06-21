@@ -8,7 +8,7 @@ eventBus.on = function (type, callback) {
   if (this.callbacks[type]) {
     this.callbacks[type].push(callback)
   } else {
-    // 不存在，直接存进去
+    // 不存在，直接存进去,要存成数组，因为可能有多个方法
     this.callbacks[type] = [callback]
   }
 }
